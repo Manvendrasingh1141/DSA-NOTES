@@ -18,6 +18,7 @@ Node *Create(int arr[],int n){
     for(int i=0;i<n;i++){
         if(start==NULL){
             start = new Node(arr[i]);
+            current = start;
         }else{
             Node *temp = new Node(arr[i]);
             current->next = temp;
@@ -30,7 +31,7 @@ Node *Create(int arr[],int n){
 
 void Display(Node *start){
     Node *ptr = start;
-    while(ptr->next){
+    while(ptr){
         cout<<ptr->data<<" ";
         ptr=ptr->next;
     }
